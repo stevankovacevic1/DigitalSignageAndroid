@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        
+        
+        <variable name="viewmodel" type="com.consulteer.digital_signage.view.ui.home.profile.ProfileViewModel"/>
+    </data>
+
+    <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:background="#FFFFFF"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.ui.home.profile.ProfileFragment">
+
+        <LinearLayout
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_horizontal"
+                      android:hint="user.name"
+                      android:text="@{viewmodel.user.name}"
+                      android:textColor="@color/colorPrimary"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="user.status"
+                    android:text="@{viewmodel.user.status}"
+                    android:textColor="@color/colorPrimary"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="birthday: 06/02/1997"
+                    android:text="@{viewmodel.user.birthday}"
+                    android:textColor="@color/colorPrimary"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="City: London"
+                    android:text="@{viewmodel.user.city}"
+                    android:textColor="@color/colorPrimary"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="Email address: john.stevens@consulteer.com"
+                    android:text="@{viewmodel.user.email}"
+                    android:textColor="@color/colorPrimary"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="0646293301"
+                    android:text="@{viewmodel.user.number}"
+                    android:textColor="@color/colorPrimary"/>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</layout>
