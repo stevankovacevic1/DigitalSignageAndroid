@@ -4,6 +4,7 @@ import android.app.Application
 import com.consulteer.digital_signage.data.db.AppDatabase
 import com.consulteer.digital_signage.data.network.MyApi
 import com.consulteer.digital_signage.data.network.NetworkConnectionInterceptor
+import com.consulteer.digital_signage.data.preferences.PreferenceProvider
 import com.consulteer.digital_signage.data.repositories.EventsRepository
 import com.consulteer.digital_signage.data.repositories.UserRepository
 import com.consulteer.digital_signage.view.ui.auth.AuthViewModelFactory
@@ -26,8 +27,9 @@ class MVVMDigitalSignage : Application(), KodeinAware {
         bind() from singleton { NetworkConnectionInterceptor(instance()) }
         bind() from singleton { MyApi(instance()) }
         bind() from singleton { AppDatabase(instance()) }
+        bind() from singleton { PreferenceProvider(instance()) }
         bind() from singleton { UserRepository(instance(), instance()) }
-        bind() from singleton { EventsRepository(instance(), instance()) }
+        bind() from singleton { EventsRepository(instance(), instance(),instance() ) }
         bind() from provider { AuthViewModelFactory(instance()) }
         bind() from provider { ProfileViewModelFactory(instance()) }
         bind() from provider { EventsViewModelFactory(instance()) }

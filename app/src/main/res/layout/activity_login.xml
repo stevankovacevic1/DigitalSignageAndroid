@@ -70,7 +70,7 @@
                 android:layout_marginTop="40dp" android:autofillHints=""/>
         <EditText
                 android:text="@={viewmodel.password}"
-                android:hint="**********"
+                android:hint="@string/passwordhint"
                 android:layout_width="0dp"
                 android:layout_height="65dp"
                 android:inputType="textPassword"
@@ -106,7 +106,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/editText" app:layout_constraintEnd_toEndOf="@+id/loginbutton"
                 app:layout_constraintStart_toStartOf="@+id/loginbutton"/>
         <Button
-                android:text="G+"
+                android:text="@string/goathbutton"
                 android:textSize="23sp"
                 android:textColor="#C4C4C4"
                 android:src="@drawable/circular_button"
@@ -123,11 +123,11 @@
                 android:background="@drawable/conslogo"
                 android:layout_width="364dp"
                 android:layout_height="97dp"
-                android:id="@+id/imageView6" app:layout_constraintEnd_toEndOf="@+id/introducer"
+                android:id="@+id/imageView6"
                 app:layout_constraintStart_toStartOf="@+id/introducer"
                 android:layout_marginTop="84dp"
                 app:layout_constraintTop_toTopOf="@+id/loginbg"
-                app:layout_constraintHorizontal_bias="0.51"/>
+                android:contentDescription="@string/conslogo" app:layout_constraintEnd_toEndOf="@+id/introducer"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -12,4 +12,7 @@
     <string name="passwordhidden">**********</string>
     <string name="g">G+</string>
     <string name="consultervector">consultervector</string>
+    <string name="passwordhint">**********</string>
+    <string name="goathbutton">G+</string>
+    <string name="conslogo">conslogo</string>
 </resources>

@@ -2,9 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
-            app:startDestination="@id/profileFragment">
+            app:startDestination="@id/fragmentEvent">
 
-    <fragment android:id="@+id/profileFragment"
+    <fragment android:id="@+id/fragmentProfile"
               android:name="com.consulteer.digital_signage.view.ui.home.profile.ProfileFragment"
               android:label="Profile"/>
     <fragment android:id="@+id/calendar" android:name="com.consulteer.digital_signage.calendar"
@@ -13,10 +13,6 @@
               tools:layout="@layout/fragment_media"/>
     <activity android:id="@+id/loginActivity" android:name="com.consulteer.digital_signage.view.ui.auth.LoginActivity"
               android:label="LoginActivity"/>
-    <fragment android:id="@+id/eventFragment" android:name="com.consulteer.digital_signage.EventFragment"
-              android:label="fragment_event" tools:layout="@layout/fragment_event">
-        <action android:id="@+id/action_eventFragment_to_media" app:destination="@id/media"/>
-        <action android:id="@+id/action_eventFragment_to_calendar" app:destination="@id/calendar"/>
-        <action android:id="@+id/action_eventFragment_to_profileFragment" app:destination="@id/profileFragment"/>
-    </fragment>
+    <fragment android:id="@+id/fragmentEvent" android:name="com.consulteer.digital_signage.EventFragment"
+              android:label="Events" tools:layout="@layout/fragment_event"/>
 </navigation>
