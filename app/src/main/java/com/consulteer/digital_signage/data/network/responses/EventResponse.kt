@@ -5,7 +5,9 @@ import com.consulteer.digital_signage.data.db.entities.Event
 data class EventResponse(
 
 
-    val events: List<Event>
+    val events: List<Event>,
+    val existEvent: Boolean,
+    val getEvent: Event
 
 
 )

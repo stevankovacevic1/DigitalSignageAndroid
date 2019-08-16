@@ -17,4 +17,6 @@ interface EventDao{
 
     @Query("SELECT * FROM Event")
     fun getEvents() : LiveData<List<Event>>
+
+
 }

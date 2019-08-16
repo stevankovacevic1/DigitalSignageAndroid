@@ -2,6 +2,7 @@ package com.consulteer.digital_signage.data.network
 
 import com.consulteer.digital_signage.data.network.responses.AuthResponse
 import com.consulteer.digital_signage.data.network.responses.EventResponse
+import com.consulteer.digital_signage.data.network.responses.GroupResponse
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -23,6 +24,15 @@ interface MyApi {
 
     @GET("events")
     suspend fun getEvents(): Response<EventResponse>
+
+    @GET("groups")
+    suspend fun getGroups() : Response<GroupResponse>
+
+    @GET ("group/id")
+    suspend fun getGroup() : Response<GroupResponse>
+
+    @GET("event/id")
+    suspend fun getEvent(): Response<EventResponse>
 
 
     companion object {

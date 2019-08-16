@@ -6,6 +6,7 @@ import com.consulteer.digital_signage.data.network.MyApi
 import com.consulteer.digital_signage.data.network.NetworkConnectionInterceptor
 import com.consulteer.digital_signage.data.preferences.PreferenceProvider
 import com.consulteer.digital_signage.data.repositories.EventsRepository
+import com.consulteer.digital_signage.data.repositories.GroupRepository
 import com.consulteer.digital_signage.data.repositories.UserRepository
 import com.consulteer.digital_signage.view.ui.auth.AuthViewModelFactory
 import com.consulteer.digital_signage.view.ui.home.events.EventsViewModelFactory
@@ -30,6 +31,7 @@ class MVVMDigitalSignage : Application(), KodeinAware {
         bind() from singleton { PreferenceProvider(instance()) }
         bind() from singleton { UserRepository(instance(), instance()) }
         bind() from singleton { EventsRepository(instance(), instance(),instance() ) }
+        bind() from singleton { GroupRepository(instance(),instance(), instance()) }
         bind() from provider { AuthViewModelFactory(instance()) }
         bind() from provider { ProfileViewModelFactory(instance()) }
         bind() from provider { EventsViewModelFactory(instance()) }

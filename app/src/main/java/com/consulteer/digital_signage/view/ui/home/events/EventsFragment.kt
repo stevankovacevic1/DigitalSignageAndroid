@@ -7,9 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.consulteer.digital_signage.R
+import com.consulteer.digital_signage.data.db.entities.Event
 import com.consulteer.digital_signage.utill.Coroutines
-import com.consulteer.digital_signage.utill.toast
+import com.consulteer.digital_signage.utill.hide
+import com.consulteer.digital_signage.utill.show
+import com.xwray.groupie.GroupAdapter
+import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.fragment_event.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
@@ -32,21 +39,50 @@ class EventsFragment : Fragment(), KodeinAware {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this, factory).get(EventsViewModel::class.java)
+        bindUI()
 
 
 
-        Coroutines.main {
+//        Coroutines.main {
+//
+//            val events = viewModel.events.await()/// uzima memorijsku nit za ovom funkcijom
+//            events.observe(this, Observer {
+//                // size of the list and toast
+//                context?.toast(it.size.toString())
+//            })
+//
+//
+//        }instead of this corotines it is like this below
 
-            val events = viewModel.events.await()/// making on memory thread with this function
-            events.observe(this, Observer {
-                // size of the list and toast
-                context?.toast(it.size.toString())
-            })
 
+    }
+private fun bindUI() = Coroutines.main{
+    progress_bar.show()
+    viewModel.events.await().observe(this, Observer {
+        initRecyclerView(it.toEventItem())
+    })
 
+}
+
+    private fun initRecyclerView(eventItem: List<EventItem>) {
+        val mAdapter = GroupAdapter<ViewHolder>().apply{
+            progress_bar.hide()
+            addAll(eventItem)
         }
+
+        recycleview.apply{
+           RecyclerView.LayoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = mAdapter
+        }
+
 
     }
 
+    private fun List<Event>.toEventItem() : List<EventItem>{
+        return this.map{
+            EventItem(it)
+        }
+    }
 
 }

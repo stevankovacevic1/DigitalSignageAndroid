@@ -5,10 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.consulteer.digital_signage.data.db.entities.Event
+import com.consulteer.digital_signage.data.db.entities.Group
 import com.consulteer.digital_signage.data.db.entities.User
 
 @Database(
-    entities = [User::class, Event::class],
+    entities = [User::class, Event::class, Group::class],
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -16,6 +17,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun getUserDao(): UserDao
     abstract fun getEventDao(): EventDao
+    abstract fun getGroupDao(): GroupDao
 
 
     companion object {

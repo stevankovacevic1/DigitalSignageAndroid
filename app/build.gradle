@@ -55,6 +55,9 @@ dependencies {
     //viewModel and liveData
     implementation "androidx.lifecycle:lifecycle-extensions:2.0.0"
 
+    //expendableTextView
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
     //new Material design
     implementation 'com.google.android.material:material:1.1.0-alpha08'
 
@@ -70,6 +73,12 @@ dependencies {
     //android navigation architecture
     implementation 'androidx.navigation:navigation-fragment-ktx:2.1.0-beta02'
     implementation 'androidx.navigation:navigation-ui-ktx:2.1.0-beta02'
+
+
+//groupie
+    implementation 'com.xwray:groupie:2.3.0'
+    implementation 'com.xwray:groupie-kotlin-android-extensions:2.3.0'
+    implementation 'com.xwray:groupie-databinding:2.3.0'
 
 
 }
