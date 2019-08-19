@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <variable name="event" type="com.consulteer.digital_signage.data.db.entities.Event"/>
+        <variable name="group" type="com.consulteer.digital_signage.data.db.entities.Group"/>
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -45,10 +45,7 @@
                     android:layout_alignBottom="@+id/event"
                     android:layout_alignEnd="@+id/event"
                     android:textStyle="bold"></TextView>
-            <View android:layout_width="wrap_content"
-                  android:layout_height="3dp"
-                  android:layout_marginBottom="-13dp"
-                  android:layout_alignBottom="@+id/event" android:background="@drawable/divider"/>
+       <View style="@style/Divider.Horizontal"></View>
 
 
         </RelativeLayout>

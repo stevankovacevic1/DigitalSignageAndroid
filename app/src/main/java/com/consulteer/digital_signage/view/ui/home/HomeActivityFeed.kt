@@ -26,4 +26,5 @@ class HomeActivityFeed : AppCompatActivity() {
             drawer_layout
         )
     }
+
 }

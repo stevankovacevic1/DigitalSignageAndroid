@@ -71,7 +71,7 @@ private fun bindUI() = Coroutines.main{
         }
 
         recycleview.apply{
-           RecyclerView.LayoutManager = LinearLayoutManager(context)
+          layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter = mAdapter
         }

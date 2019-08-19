@@ -59,7 +59,7 @@ class GroupsFragment : Fragment(), KodeinAware {
             addAll(groupItem)
     }
         recycleview.apply{
-            RecyclerView.LayoutManager=LinearLayoutManager(context)
+            layoutManager=LinearLayoutManager(context)
             setHasFixedSize(true)
             adapter= gAdapter
         }

@@ -2,6 +2,7 @@ package com.consulteer.digital_signage.view.ui.home.groups
 
 import com.consulteer.digital_signage.R
 import com.consulteer.digital_signage.data.db.entities.Group
+import com.consulteer.digital_signage.databinding.ItemGroupBinding
 import com.xwray.groupie.databinding.BindableItem
 
 class GroupItem(
