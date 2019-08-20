@@ -13,6 +13,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".view.ui.home.media.VideoFullScreen">
+        </activity>
         <activity android:name=".view.ui.home.HomeActivityFeed">
         </activity>
         <activity android:name=".view.ui.auth.LoginActivity">
@@ -22,6 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name=".view.ui.home.media.VideoFullScreen"
+                  android:screenOrientation="landscape"
 
         <meta-data
                 android:name="preloaded_fonts"
