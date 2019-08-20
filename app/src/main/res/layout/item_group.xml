@@ -12,11 +12,14 @@
 
         <ImageView
                 android:layout_width="38dp"
+                android:layout_margin="15dp"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/ic_calendaricon"
                 android:id="@+id/vectorCalendar"/>
         <RelativeLayout
+                android:layout_margin="15dp"
                 android:id="@+id/rellay"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="12dp">
@@ -35,13 +38,14 @@
             <TextView
                     android:text="30"
                     android:textSize="10sp"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/dateNumber"
                     android:hint="30"
-                    android:layout_marginEnd="374dp"
+                    android:layout_marginEnd="375dp"
                     android:fontFamily="@font/roboto_thin"
-                    android:layout_marginBottom="11dp"
+                    android:layout_marginBottom="20dp"
                     android:layout_alignBottom="@+id/event"
                     android:layout_alignEnd="@+id/event"
                     android:textStyle="bold"></TextView>

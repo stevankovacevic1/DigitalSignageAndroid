@@ -15,5 +15,4 @@
             tools:listitem="@layout/item_media"
             android:layout_height="match_parent"/>
 </LinearLayout>
-<androidx.recyclerview.widget.RecyclerView/>
 
