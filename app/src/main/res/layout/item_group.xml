@@ -49,7 +49,7 @@
                     android:layout_alignBottom="@+id/event"
                     android:layout_alignEnd="@+id/event"
                     android:textStyle="bold"></TextView>
-       <View style="@style/Divider.Horizontal"></View>
+
 
 
         </RelativeLayout>

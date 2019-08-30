@@ -7,6 +7,8 @@ data class AuthResponse (
     val message: String?,
     val user: User?
 
+/// responses for taosting and progress bar while checking db with entered information in auth
+
 
 
 

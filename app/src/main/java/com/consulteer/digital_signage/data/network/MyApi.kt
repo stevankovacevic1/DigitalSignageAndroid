@@ -3,14 +3,15 @@ package com.consulteer.digital_signage.data.network
 import com.consulteer.digital_signage.data.network.responses.AuthResponse
 import com.consulteer.digital_signage.data.network.responses.EventResponse
 import com.consulteer.digital_signage.data.network.responses.GroupResponse
+import com.consulteer.digital_signage.data.network.responses.UserResponse
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.util.*
 
 interface MyApi {
     //firstName, lastName,username,password,email,status,role
@@ -34,6 +35,20 @@ interface MyApi {
     @GET("event/id")
     suspend fun getEvent(): Response<EventResponse>
 
+    @GET("users")
+    suspend fun getAllUsers(): Response<UserResponse>
+
+    @FormUrlEncoded
+    @PUT("user/id")
+    suspend fun editUser(
+        @Field ("role") role: String?,
+        @Field ("status") status: String,
+        @Field ("birthday") birthday:LocalDate,
+        @Field("address") address: String?,
+        @Field("slava") slava: LocalDate,
+        @Field("number") number: String?
+    ): Response<UserResponse>
+
 
     companion object {
         operator fun invoke(networkConnectionInterceptor: NetworkConnectionInterceptor): MyApi {
@@ -46,7 +61,7 @@ interface MyApi {
 
             return Retrofit.Builder()
                 .client(okHttpclient)
-                .baseUrl("{@customUrl}")//change
+                .baseUrl("{@customUrl}")//change to rest api endpoint, kada uzmes backend endpointe
                 .addConverterFactory(
                     GsonConverterFactory
                         .create()

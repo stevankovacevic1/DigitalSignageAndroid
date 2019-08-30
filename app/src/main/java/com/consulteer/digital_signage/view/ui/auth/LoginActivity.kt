@@ -14,15 +14,20 @@ import com.consulteer.digital_signage.utill.hide
 import com.consulteer.digital_signage.utill.show
 import com.consulteer.digital_signage.utill.snackbar
 import com.consulteer.digital_signage.view.ui.home.HomeActivityFeed
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.android.gms.common.SignInButton
 import kotlinx.android.synthetic.main.activity_login.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.kodein
 import org.kodein.di.generic.instance
 
-class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware{
+class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware {
 
     override val kodein by kodein()
     private val factory: AuthViewModelFactory by instance()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,6 +51,13 @@ class LoginActivity : AppCompatActivity(), AuthListener, KodeinAware{
 
             }
         })
+
+
+      ///google sing in
+       var gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+           .requestEmail()
+           .build()
+       val mGoogleSignInClient= GoogleSignIn.getClient(this,gso)
     }
 
     override fun onStarted() {

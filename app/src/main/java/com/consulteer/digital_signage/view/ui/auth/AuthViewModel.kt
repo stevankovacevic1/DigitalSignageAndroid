@@ -39,7 +39,6 @@ class AuthViewModel(private val repository: UserRepository) : ViewModel() {
                 authListener?.onFailure(e.message!!)
             }
 
-
         }
     }
 

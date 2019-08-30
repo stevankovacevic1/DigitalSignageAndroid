@@ -6,13 +6,35 @@
 
     <fragment android:id="@+id/fragmentProfile"
               android:name="com.consulteer.digital_signage.view.ui.home.profile.ProfileFragment"
-              android:label="Profile"/>
+              android:label="Profile">
+        <action android:id="@+id/action_fragmentProfile_to_edit_profile" app:destination="@id/edit_profile"/>
+    </fragment>
     <fragment android:id="@+id/calendar" android:name="com.consulteer.digital_signage.calendar"
               android:label="fragment_calendar" tools:layout="@layout/fragment_calendar"/>
-    <fragment android:id="@+id/media" android:name="com.consulteer.digital_signage.Media" android:label="fragment_media"
-              tools:layout="@layout/fragment_media"/>
     <activity android:id="@+id/loginActivity" android:name="com.consulteer.digital_signage.view.ui.auth.LoginActivity"
               android:label="LoginActivity"/>
     <fragment android:id="@+id/fragmentEvent" android:name="com.consulteer.digital_signage.EventFragment"
-              android:label="Events" tools:layout="@layout/fragment_event"/>
+              android:label="Events" tools:layout="@layout/fragment_event">
+        <action android:id="@+id/action_fragmentEvent_to_media" app:destination="@id/media"/>
+        <action android:id="@+id/action_fragmentEvent_to_usersFragment" app:destination="@id/usersFragment"/>
+        <action android:id="@+id/action_fragmentEvent_to_calendar" app:destination="@id/calendar"/>
+        <action android:id="@+id/action_fragmentEvent_to_fragmentProfile" app:destination="@id/fragmentProfile"/>
+    </fragment>
+    <fragment android:id="@+id/profileFragment"
+              android:name="com.consulteer.digital_signage.view.ui.home.profile.ProfileFragment"
+              android:label="ProfileFragment"/>
+    <fragment android:id="@+id/usersFragment"
+              android:name="com.consulteer.digital_signage.view.ui.home.employees.UsersFragment"
+              android:label="fragment_users" tools:layout="@layout/fragment_users">
+        <action android:id="@+id/action_usersFragment_to_profileFragment" app:destination="@id/profileFragment"/>
+    </fragment>
+    <activity android:id="@+id/videoFullScreen"
+              android:name="com.consulteer.digital_signage.view.ui.home.media.VideoFullScreen"
+              android:label="activity_video_full_screen" tools:layout="@layout/activity_video_full_screen"/>
+    <fragment android:id="@+id/media" android:name="com.consulteer.digital_signage.Media" android:label="fragment_media"
+              tools:layout="@layout/fragment_media">
+        <action android:id="@+id/action_media_to_videoFullScreen" app:destination="@id/videoFullScreen"/>
+    </fragment>
+    <fragment android:id="@+id/edit_profile" android:name="com.consulteer.digital_signage.edit_profile"
+              android:label="fragment_edit_profile" tools:layout="@layout/fragment_edit_profile"/>
 </navigation>

@@ -4,8 +4,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.time.LocalDateTime
 
-
-@Entity
+//primary key must contain sepreate abstract class with autogenerate off, bcuz when current user logs the session with FILO
+@Entity(tableName = "event")
 data class Event(
     @PrimaryKey(autoGenerate = true)
     val title: String?,

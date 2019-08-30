@@ -3,7 +3,9 @@
 
 
     <item android:title="Info"
-          android:id="@+id/fragmentinfo"></item>
+          android:id="@+id/fragmentinfo"
+
+    ></item>
 
     <item android:title="Media"
           android:id="@+id/fragmentmedia">
@@ -12,6 +14,12 @@
           android:id="@+id/fragmentprofile"></item>
     <item android:title="Calendar"
           android:id="@+id/fragmentcalendar"></item>
+    <item android:title="Employees"
+          android:id="@+id/fragmentempolyees"></item>
+    <item android:title="TV Device"
+          android:id="@+id/fragmenttvdevice"></item>
+    <item android:title="Leave request"
+          android:id="@+id/fragmentleaverequest"></item>
     <group
     />
 

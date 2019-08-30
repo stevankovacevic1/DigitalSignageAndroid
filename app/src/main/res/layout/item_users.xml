@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="users" type="com.consulteer.digital_signage.data.db.entities.User"/>
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/item_users">
+
+
+        <ImageView
+                android:layout_marginLeft="20dp"
+                android:layout_width="68dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/profile_border"
+                android:background="@drawable/ic_account_box_black_24dp"
+                android:id="@+id/profilepic"/>
+        <RelativeLayout
+                android:layout_margin="10dp"
+                android:id="@+id/rellay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="13dp">
+            <TextView
+                    android:layout_width="347dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                    android:id="@+id/event"
+                    android:text="@{user.firstname+ user.lastname}"
+                    tools:text="Pera Stagodic"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="86dp"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/roboto_thin"/>
+            <TextView android:layout_width="100dp" android:layout_height="wrap_content"
+                      android:text="@{user.status}"
+                      android:textColor="@color/colorPrimary"
+                      tools:text="Backend deveoper"
+                      android:layout_marginEnd="10dp" android:layout_alignEnd="@+id/event"
+                      android:layout_marginStart="171dp" android:layout_alignStart="@+id/event"/>
+
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
+

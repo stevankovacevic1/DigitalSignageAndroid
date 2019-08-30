@@ -9,10 +9,11 @@ import com.xwray.groupie.databinding.BindableItem
 
 class EventItem(
     private val event: Event
-): BindableItem<ItemEventBinding>(){
+) : BindableItem<ItemEventBinding>() {
     override fun bind(viewBinding: ItemEventBinding, position: Int) {
         viewBinding.setEvent(event)
     }
-    override fun getLayout()= R.layout.item_event
+
+    override fun getLayout() = R.layout.item_event
 
 }

@@ -9,5 +9,5 @@ data class EventResponse(
     val existEvent: Boolean,
     val getEvent: Event
 
-
+// exist event need to compare event if information are similar or same
 )

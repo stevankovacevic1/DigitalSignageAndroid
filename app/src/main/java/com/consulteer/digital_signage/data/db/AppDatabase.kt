@@ -9,7 +9,7 @@ import com.consulteer.digital_signage.data.db.entities.Group
 import com.consulteer.digital_signage.data.db.entities.User
 
 @Database(
-    entities = [User::class, Event::class, Group::class],
+    entities = [User::class, Event::class, Group::class],// what repose and entities with table have and when is used
     version = 1
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -18,6 +18,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getUserDao(): UserDao
     abstract fun getEventDao(): EventDao
     abstract fun getGroupDao(): GroupDao
+    abstract fun getVacReqDao() : VacReqDao
 
 
     companion object {

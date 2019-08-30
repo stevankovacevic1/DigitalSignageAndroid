@@ -15,7 +15,7 @@ class MediaFragmentActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_media)
         recyclerView = findViewById(R.id.recycleview)
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this) as RecyclerView.LayoutManager?
         recyclerView.setHasFixedSize(false)///stavi true ako hoces fixed broj linkova
         arrayList = ArrayList<DataSetList>()
 

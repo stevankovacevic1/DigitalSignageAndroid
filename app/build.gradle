@@ -9,6 +9,9 @@ apply plugin: 'kotlin-kapt'
 
 apply plugin: "androidx.navigation.safeargs"
 
+apply plugin: 'com.android.application'
+
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
@@ -83,6 +86,13 @@ dependencies {
 
     //expandable TextView
     implementation 'com.ms-square:expandableTextView: 0.1.4'
+
+
+    //timesquare calendar
+    implementation 'com.squareup:android-times-square:1.6.5@aar'
+
+    //
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
 
 //    //recylee view for card view for youtube api media fetcher
