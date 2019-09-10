@@ -9,16 +9,15 @@
               android:label="Profile">
         <action android:id="@+id/action_fragmentProfile_to_edit_profile" app:destination="@id/edit_profile"/>
     </fragment>
-    <fragment android:id="@+id/calendar" android:name="com.consulteer.digital_signage.calendar"
-              android:label="fragment_calendar" tools:layout="@layout/fragment_calendar"/>
     <activity android:id="@+id/loginActivity" android:name="com.consulteer.digital_signage.view.ui.auth.LoginActivity"
               android:label="LoginActivity"/>
     <fragment android:id="@+id/fragmentEvent" android:name="com.consulteer.digital_signage.EventFragment"
               android:label="Events" tools:layout="@layout/fragment_event">
         <action android:id="@+id/action_fragmentEvent_to_media" app:destination="@id/media"/>
         <action android:id="@+id/action_fragmentEvent_to_usersFragment" app:destination="@id/usersFragment"/>
-        <action android:id="@+id/action_fragmentEvent_to_calendar" app:destination="@id/calendar"/>
         <action android:id="@+id/action_fragmentEvent_to_fragmentProfile" app:destination="@id/fragmentProfile"/>
+        <action android:id="@+id/action_fragmentEvent_to_vacCalendarFragment"
+                app:destination="@id/vacCalendarFragment"/>
     </fragment>
     <fragment android:id="@+id/profileFragment"
               android:name="com.consulteer.digital_signage.view.ui.home.profile.ProfileFragment"
@@ -37,4 +36,7 @@
     </fragment>
     <fragment android:id="@+id/edit_profile" android:name="com.consulteer.digital_signage.edit_profile"
               android:label="fragment_edit_profile" tools:layout="@layout/fragment_edit_profile"/>
+    <activity android:id="@+id/vacCalendarFragment"
+              android:name="com.consulteer.digital_signage.view.ui.home.vacationReq.VacCalendarFragment"
+              android:label="fragment_vacation" tools:layout="@layout/fragment_vacation"/>
 </navigation>

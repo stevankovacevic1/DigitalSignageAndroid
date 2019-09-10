@@ -1,6 +1,7 @@
 package com.consulteer.digital_signage.data.db.entities
 
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.time.LocalDate
 
 
@@ -15,3 +16,5 @@ data class VacReq(
 
 
 )
+@PrimaryKey(autoGenerate = true)
+var vrid: Long = REQUEST_PER_SESSION_USER

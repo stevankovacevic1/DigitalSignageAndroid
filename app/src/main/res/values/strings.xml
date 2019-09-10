@@ -15,4 +15,8 @@
     <string name="passwordhint">**********</string>
     <string name="goathbutton">G+</string>
     <string name="conslogo">conslogo</string>
+    <string name="title_activity_bottom">bottom</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

@@ -1,19 +1,21 @@
 package com.consulteer.digital_signage.view.ui.home.vacationReq;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.consulteer.digital_signage.R;
-import com.consulteer.digital_signage.data.db.UserDao;
-import com.consulteer.digital_signage.data.db.entities.User;
+import com.squareup.timessquare.CalendarCellView;
 import com.squareup.timessquare.CalendarPickerView;
 
-import java.lang.reflect.Array;
 import java.text.DateFormat;
-import java.time.DayOfWeek;
-import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
+import static android.graphics.Color.parseColor;
 
 public class VacCalendarFragment extends AppCompatActivity {
 
@@ -31,18 +33,46 @@ public class VacCalendarFragment extends AppCompatActivity {
         datePicker.init(today, nextYear.getTime())
                 .inMode(CalendarPickerView.SelectionMode.RANGE)
                 .withSelectedDate(today);
-        int countDays = datePicker.getCount();
+       final int countDays = datePicker.getCount();
         List requestedDates = datePicker.getSelectedDates();
 
+
+
+        /// showing dialog by button
+        findViewById(R.id.reqleave).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                AlertDialog.Builder builder = new AlertDialog.Builder(VacCalendarFragment.this);
+                builder.setTitle("Your Request");
+                builder.setMessage("are you sure you want to send request for vacation for:" +countDays+"\n");
+                builder.setPositiveButton("Send Request", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(VacCalendarFragment.this, "You successfuly send the request for revision", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.setNegativeButton("Change", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Toast.makeText(VacCalendarFragment.this, "You request was terminated", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+
+            }
+
+
+        });
 
 
         datePicker.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
             @Override
             public void onDateSelected(Date date) {
-                //String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(date);
+                //String selectedDate1 = DateFormat.getDateInstance(DateFormat.FULL).format(date);
 
                 Calendar calSelected = Calendar.getInstance();
                 calSelected.setTime(date);
+
 
                 String selectedDate = "" + calSelected.get(Calendar.DAY_OF_MONTH) + " " + (calSelected.get(Calendar.MONTH) + 1) + "" +
                         calSelected.get(Calendar.YEAR);
@@ -50,8 +80,13 @@ public class VacCalendarFragment extends AppCompatActivity {
 
             @Override
             public void onDateUnselected(Date date) {
+                Calendar calUnselected = Calendar.getInstance();
+                calUnselected.setTime(date);
+
 
             }
+
+
         });
 
 

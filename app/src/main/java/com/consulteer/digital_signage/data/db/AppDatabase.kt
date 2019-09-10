@@ -19,6 +19,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getEventDao(): EventDao
     abstract fun getGroupDao(): GroupDao
     abstract fun getVacReqDao() : VacReqDao
+    abstract  fun getReqDaysDao(): ReqDaysDao
 
 
     companion object {

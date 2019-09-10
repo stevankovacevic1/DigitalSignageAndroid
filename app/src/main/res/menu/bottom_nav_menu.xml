@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+          android:id="@+id/fragmentinfo"
+    android:icon="@drawable/ic_home_black_24dp"></item>
+
+    <item android:title="Employees"
+          android:id="@+id/fragmentempolyees"
+    android:icon="@drawable/ic_account_multiple"></item>
+
+    <item android:title="Leave request"
+          android:id="@+id/fragmentleaverequest"
+    android:icon="@drawable/ic_calendar_blank"></item>
+
+    <item android:title="Media"
+          android:id="@+id/fragmentmedia"
+    android:icon="@drawable/ic_youtube"></item>
+
+    <item android:title="Settings"
+          android:id="@+id/fragmentprofile"
+    android:icon="@drawable/ic_settings"></item>
+
+
+</menu>

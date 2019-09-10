@@ -5,6 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.common.SignInButton
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 const val CURRENT_USER_ID = 0/// though whole seession that CURRENT USER ID becomes when someone logs in with consulteer extension mail
@@ -22,7 +23,7 @@ data class User(
     var role: String? = null,
     var birthday: LocalDateTime,
     var address: String? = null,
-    val slava: LocalDateTime?,
+    val slava: LocalDate?,
     var number: String?,
     var remDaysVac: Int? = null
 
