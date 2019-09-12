@@ -44,26 +44,24 @@ public class VacCalendarFragment extends AppCompatActivity {
             public void onClick(View view){
                 AlertDialog.Builder builder = new AlertDialog.Builder(VacCalendarFragment.this);
                 builder.setTitle("Your Request");
-                builder.setMessage("are you sure you want to send request for vacation for:" +countDays+"\n");
+                builder.setMessage("Are you sure you want to send request for vacation for:" +countDays+"\n");
                 builder.setPositiveButton("Send Request", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(VacCalendarFragment.this, "You successfuly send the request for revision", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VacCalendarFragment.this, "You successfully sent the request for revision", Toast.LENGTH_SHORT).show();
                     }
                 });
                 builder.setNegativeButton("Change", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Toast.makeText(VacCalendarFragment.this, "You request was terminated", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(VacCalendarFragment.this, "You request was canceled", Toast.LENGTH_SHORT).show();
                     }
                 });
-
 
             }
 
 
         });
-
 
         datePicker.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
             @Override
@@ -73,22 +71,15 @@ public class VacCalendarFragment extends AppCompatActivity {
                 Calendar calSelected = Calendar.getInstance();
                 calSelected.setTime(date);
 
-
                 String selectedDate = "" + calSelected.get(Calendar.DAY_OF_MONTH) + " " + (calSelected.get(Calendar.MONTH) + 1) + "" +
                         calSelected.get(Calendar.YEAR);
             }
-
             @Override
             public void onDateUnselected(Date date) {
                 Calendar calUnselected = Calendar.getInstance();
                 calUnselected.setTime(date);
-
-
             }
 
-
         });
-
-
     }
 }

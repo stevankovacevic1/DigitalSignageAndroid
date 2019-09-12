@@ -5,21 +5,29 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 
-class bottom : AppCompatActivity() {
+class BottomNav : AppCompatActivity() {
 
     private lateinit var textMessage: TextView
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
-            R.id.navigation_home -> {
-                textMessage.setText(R.string.title_home)
+            R.id.fragmentinfo -> {
+                textMessage.setText("Home")
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
-                textMessage.setText(R.string.title_dashboard)
+            R.id.fragmentempolyees -> {
+                textMessage.setText("Employees")
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_notifications -> {
-                textMessage.setText(R.string.title_notifications)
+            R.id.fragmentleaverequest -> {
+                textMessage.setText("Leave Request")
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.fragmentmedia -> {
+                textMessage.setText("Media")
+                return@OnNavigationItemSelectedListener true
+            }
+            R.id.fragmentprofile -> {
+                textMessage.setText("Settings")
                 return@OnNavigationItemSelectedListener true
             }
         }

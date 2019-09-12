@@ -17,4 +17,4 @@ data class VacReq(
 
 )
 @PrimaryKey(autoGenerate = true)
-var vrid: Long = REQUEST_PER_SESSION_USER
+var vrid: Long = REQUEST_PER_DEFAULT_USER
