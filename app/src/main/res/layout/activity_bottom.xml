@@ -6,13 +6,14 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".bottom_nav">
+        tools:context=".BottomNav">
     <FrameLayout android:layout_width="match_parent"
                  android:layout_height="match_parent"
                  android:layout_above="@id/nav_view"></FrameLayout>
 
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+            app:itemHorizontalTranslationEnabled="false"
             android:id="@+id/nav_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

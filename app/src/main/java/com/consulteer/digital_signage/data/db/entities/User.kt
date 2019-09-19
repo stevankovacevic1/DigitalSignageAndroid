@@ -9,7 +9,7 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 const val CURRENT_USER_ID = 0/// though whole seession that CURRENT USER ID becomes when someone logs in with consulteer extension mail
-
+const val SEARCHED_USER_ID= 0
 
 @Entity(tableName = "user")
 data class User(
@@ -40,6 +40,9 @@ data class User(
 ) {
     @PrimaryKey(autoGenerate = false)
     var uid: Int = CURRENT_USER_ID/// logged user id become primary key user session
+
+    @PrimaryKey(autoGenerate = false)
+    var sid: Int = SEARCHED_USER_ID
 
 
 }

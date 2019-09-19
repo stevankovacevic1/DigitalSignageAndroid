@@ -12,6 +12,7 @@ import com.consulteer.digital_signage.view.ui.auth.AuthViewModelFactory
 import com.consulteer.digital_signage.view.ui.home.employees.UsersViewModelFactory
 import com.consulteer.digital_signage.view.ui.home.events.EventsViewModelFactory
 import com.consulteer.digital_signage.view.ui.home.profile.ProfileViewModelFactory
+import com.consulteer.digital_signage.view.ui.home.profile.editProfile.EditProfileViewModelFactory
 import com.consulteer.digital_signage.view.ui.home.vacationReq.VacCalendarViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -39,6 +40,7 @@ class MVVMDigitalSignage : Application(), KodeinAware {
         bind() from provider { EventsViewModelFactory(instance()) }
         bind() from provider {UsersViewModelFactory(instance())}
         bind() from provider {VacCalendarViewModelFactory(instance())}
+        bind () from provider{EditProfileViewModelFactory(instance())}
 
 
 

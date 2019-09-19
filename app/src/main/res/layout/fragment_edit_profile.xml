@@ -5,7 +5,8 @@
              android:layout_height="match_parent"
              tools:context=".edit_profile">
 
-    <!-- TODO: Update blank fragment layout -->
+    <data> <variable name="editProfile" type="com.consulteer.digital_signnage.data.db.entities.User"></variable>
+    </data>
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"

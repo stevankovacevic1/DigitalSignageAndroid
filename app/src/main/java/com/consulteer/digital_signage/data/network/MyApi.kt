@@ -20,8 +20,7 @@ interface MyApi {
     suspend fun userLogin(
         @Field("email") email: String,
         @Field("password") password: String
-    )
-            : Response<AuthResponse>
+    ): Response<AuthResponse>
 
     @GET("events")
     suspend fun getEvents(): Response<EventResponse>
@@ -29,17 +28,17 @@ interface MyApi {
     @GET("groups")
     suspend fun getGroups() : Response<GroupResponse>
 
-    @GET ("group/id")
+    @GET ("group/{id}")
     suspend fun getGroup() : Response<GroupResponse>
 
-    @GET("event/id")
+    @GET("event/{id}")
     suspend fun getEvent(): Response<EventResponse>
 
     @GET("users")
     suspend fun getAllUsers(): Response<UserResponse>
 
     @FormUrlEncoded
-    @PUT("user/id")
+    @PUT("user/{id}")
     suspend fun editUser(
         @Field ("role") role: String?,
         @Field ("status") status: String,
@@ -61,7 +60,7 @@ interface MyApi {
 
             return Retrofit.Builder()
                 .client(okHttpclient)
-                .baseUrl("{@customUrl}")//change to rest api endpoint, kada uzmes backend endpointe
+                .baseUrl("{@customUrl}")//kada zavrse rest....
                 .addConverterFactory(
                     GsonConverterFactory
                         .create()

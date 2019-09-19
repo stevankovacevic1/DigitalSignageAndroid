@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.consulteer.digital_signage.data.db.entities.CURRENT_USER_ID
+import com.consulteer.digital_signage.data.db.entities.SEARCHED_USER_ID
 import com.consulteer.digital_signage.data.db.entities.User
 
 
@@ -23,6 +24,9 @@ interface UserDao {
 
     @Query("SELECT * FROM user")
     fun getAllUsers(): LiveData<List<User>>
+
+    @Query("SELECT * FROM user WHERE sid=$SEARCHED_USER_ID")
+    fun getSearchedUser(): LiveData<User>
 
 
 }

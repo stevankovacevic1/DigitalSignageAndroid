@@ -26,6 +26,7 @@ class UserRepository(
 
     fun getUser() = db.getUserDao().getUser()
     fun getAllUsers() = db.getUserDao().getAllUsers()
+    fun getSearchedUser()= db.getUserDao().getSearchedUser()
 
 
 }
