@@ -41,8 +41,8 @@ class VacationRepository(
     private suspend fun fetchVacations() {
         val lastSavedAt = preference.getLastSAvedAt()
         if (lastSavedAt == null || isFetchNeeded(LocalDateTime.parse(lastSavedAt))) {
-            val response = apiRequest { api.getVacations() }
-            vacation.postValue(response.vacations)
+            val response = apiRequest { api.getVacation() }
+            vacation.postValue(response.)
         }
     }
     private fun isFetchNeeded(savedAt: LocalDateTime): Boolean{

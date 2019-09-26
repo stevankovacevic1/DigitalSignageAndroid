@@ -22,6 +22,7 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.fragment_event.*
 import org.kodein.di.KodeinAware
 import org.kodein.di.generic.instance
+import org.kodein.di.android.x.kodein
 import java.util.Collections.addAll
 
 class GroupsFragment : Fragment(), KodeinAware {

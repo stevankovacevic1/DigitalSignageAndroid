@@ -5,11 +5,7 @@
              android:layout_height="match_parent"
              tools:context=".edit_profile">
 
-    <data> <variable name="editProfile" type="com.consulteer.digital_signnage.data.db.entities.User"></variable>
+    <data> <variable android:name="EditProfile" android:type="com.consulteer.digital_signnage.data.db.entities.User"></variable>
     </data>
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
 
 </FrameLayout>

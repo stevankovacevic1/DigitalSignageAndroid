@@ -1,5 +1,6 @@
 package com.consulteer.digital_signage.data.network
 
+import com.consulteer.digital_signage.data.db.entities.VacReq
 import com.consulteer.digital_signage.data.network.responses.AuthResponse
 import com.consulteer.digital_signage.data.network.responses.EventResponse
 import com.consulteer.digital_signage.data.network.responses.GroupResponse
@@ -36,6 +37,9 @@ interface MyApi {
 
     @GET("users")
     suspend fun getAllUsers(): Response<UserResponse>
+
+    @GET("vacations")
+    suspend fun getVacation(): Response<VacReq>
 
     @FormUrlEncoded
     @PUT("user/{id}")

@@ -40,7 +40,7 @@ class MVVMDigitalSignage : Application(), KodeinAware {
         bind() from provider { EventsViewModelFactory(instance()) }
         bind() from provider {UsersViewModelFactory(instance())}
         bind() from provider {VacCalendarViewModelFactory(instance())}
-        bind () from provider{EditProfileViewModelFactory(instance())}
+        bind() from provider {EditProfileViewModelFactory(instance())}
 
 
 
